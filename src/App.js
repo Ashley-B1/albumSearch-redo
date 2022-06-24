@@ -1,10 +1,10 @@
-import NavBar from "./Components/NavBar";
+import HeroContainer from "./Components/Hero";
 
 
 function App() {
   return (
     <>
-      <NavBar />
+      <HeroContainer />
     </>
   );
 }
