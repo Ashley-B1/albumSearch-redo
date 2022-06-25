@@ -20,18 +20,18 @@ export const getAlbums = artist => async dispatch => {
   return await res.json();
 };
 
-const initialState = { entries: {}, posts: {} };
+const initialState = { albums: {} };
 
 const albumsReducer = (state = initialState, action) => {
   let newState;
-  let entries;
+  let albums;
 
   switch (action.type) {
     case LOAD_ALBUMS:
       newState = { ...state };
-      entries = {};
-      action.albums.forEach(album => (entries[album.collectionId] = album));
-      newState.entries = entries;
+      albums = {};
+      action.albums.results.forEach(album => (albums[album.collectionId] = album));
+      newState.albums.results = albums;
       return newState;
     default:
       return state;
