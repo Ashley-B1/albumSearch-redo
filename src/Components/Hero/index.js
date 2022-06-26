@@ -16,9 +16,11 @@ const HeroContainer = () => {
 
   let [artist, setArtist] = useState("");
   let [albums, setAlbums] = useState([]);
+  let [fetching, isFetching] = useState(false)
 
   const lookUp = async (e) => {
     e.preventDefault();
+    isFetching(true);
 
     if (e.keyCode === 13) {
       artist = e.target.value;
@@ -28,6 +30,7 @@ const HeroContainer = () => {
         alert("Please fill out this field");
       }
       const res = await dispatch(albumActions.getAlbums(artist));
+      isFetching(false);
       albums = res.albums.results;
       setAlbums(albums);
     }
@@ -35,6 +38,7 @@ const HeroContainer = () => {
 
   const handleClick = async (e) => {
     e.preventDefault();
+    isFetching(true);
 
     artist = searchInput?.value;
     setArtist(artist);
@@ -43,6 +47,7 @@ const HeroContainer = () => {
       alert("Please fill out this field");
     }
     const res = await dispatch(albumActions.getAlbums(artist));
+    isFetching(false);
     albums = res.albums.results;
     setAlbums(albums);
   };
@@ -61,6 +66,11 @@ const HeroContainer = () => {
           <FaSearch />
         </button>
       </div>
+      {fetching ? (
+        <div className="color-change show-loader" id='loader'></div>
+      ) : (
+        <div className="color-change" id='loader'></div>
+      )}
       <div className="results">
         {artist ? (
           <>
