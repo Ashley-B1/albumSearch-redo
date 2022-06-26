@@ -1,0 +1,28 @@
+.album-card {
+  width: 9rem;
+  height: 11rem;
+  overflow: hidden;
+  padding: 0 0 .3rem 0;
+  border: black 1px solid;
+  margin: 0 1rem 1rem 0rem;
+  background-color: #51C1B1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pic-sect {
+  height: 60%;
+  width: 100%;
+}
+
+.album-pic {
+  width: 100%;
+  height: 100%
+}
+
+.album-title {
+  font-size: .7rem;
+  width: 80%;
+  margin-top: .8rem;
+}
