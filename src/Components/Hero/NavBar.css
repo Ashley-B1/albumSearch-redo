@@ -19,15 +19,11 @@
 
 #search-input:focus {
   width: 40%;
-
-}
-
-.fa-search {
-  cursor: pointer;
 }
 
 #search-icon {
   margin-left: -40px;
   border: none;
   background-color: #fff;
+  cursor: pointer;
 }

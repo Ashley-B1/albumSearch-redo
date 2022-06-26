@@ -15,11 +15,3 @@
   position: relative;
   z-index: -1;
 }
-
-#result-container {
-  position: relative;
-  z-index: -1;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
